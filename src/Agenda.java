@@ -1,9 +1,8 @@
-import java.util.HashMap;
+import java.util.*;
 
 public class Agenda {
     private HashMap<String, Contacto> contactos = new HashMap<>();
     static private int contadorContactos; // Variable que cuenta cuántos contactos hay guardados.
-
 
 
     public Agenda() { // Constructor por defecto.
@@ -49,4 +48,31 @@ public class Agenda {
         return contactos.length - contadorContactos; // Restamos el tamaño total menos los contactos ocupados.
     }
 
-}
+
+// Metodo Listar Contacto
+
+    public Map<String, Contacto> listarContactos() {
+        //Se crea lista
+
+        List<Map.Entry<String, Contacto>> lista = new ArrayList<>(contactos.entrySet());
+
+        //Se ordena llamando con getNombre
+
+        Collections.sort(lista, new Comparator<Map.Entry<String, Contacto>>() {
+            @Override
+            public int compare(Map.Entry<String, Contacto> parejaUno, Map.Entry<String, Contacto> parejaDos) {
+                return parejaUno.getValue().getNombre().compareToIgnoreCase(parejaDos.getValue().getNombre());
+            } //compare
+        });
+
+        //Guardar el orden
+        Map<String, Contacto> mapaContacto = new LinkedHashMap<>();
+        for (Map.Entry<String, Contacto> entrada : lista) {
+            mapaContacto.put(entrada.getKey(), entrada.getValue());
+        } //for
+
+        return mapaContacto;
+
+   }
+
+}//classAgenda
