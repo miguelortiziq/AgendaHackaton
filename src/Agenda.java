@@ -41,7 +41,7 @@ public class Agenda {
 
     public int espaciosLibres() {
         int limiteMaximo = 10;
-        return limiteMaximo - contadorContactos; // Restamos el tamaño total menos los contactos ocupados.
+        return contactos.size(); // Restamos el tamaño total menos los contactos ocupados.
     }
 
 
