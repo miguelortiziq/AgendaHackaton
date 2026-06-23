@@ -7,4 +7,4 @@ Integrantes del equipo:
 - Mauro
 - Miguel Angel Ortiz Sánchez
 - Uriel
-- Valeria
+- Valeria Itzel Pérez Ponce
