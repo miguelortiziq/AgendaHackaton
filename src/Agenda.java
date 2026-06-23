@@ -13,30 +13,51 @@ public class Agenda {
 
     }
 
-    public void añadirContacto(Contacto contacto) { // Método para añadir un contacto.
-        if (existeContacto(contacto)) { // Verificamos si el contacto ya existe.
-            System.out.println("El contacto ya existe en la agenda."); // Mostramos mensaje si está repetido.
-            return; // Terminamos el método.
+    public void añadirContacto(Contacto contacto) {
+
+        // Verificamos si el contacto ya existe en el HashMap.
+        if (existeContacto(contacto)) {
+
+            // Mostramos mensaje indicando que el contacto ya está registrado.
+            System.out.println("El contacto ya existe en la agenda.");
+
+            // Terminamos la ejecución del método.
+            return;
         }
 
-        if (agendaLlena()) { // Verificamos si la agenda está llena.
-            System.out.println("La agenda está llena. No se pueden agregar más contactos."); // Mostramos mensaje.
-            return; // Terminamos el método.
+        // Verificamos si la agenda llegó a su capacidad máxima.
+        if (agendaLlena()) {
+
+            // Mostramos mensaje indicando que no hay espacio disponible.
+            System.out.println("La agenda está llena. No se pueden agregar más contactos.");
+
+            // Terminamos la ejecución del método.
+            return;
         }
 
-        contactos[contadorContactos] = contacto; // Guardamos el contacto en la posición disponible.
-        contadorContactos++; // Aumentamos el contador de contactos.
-        System.out.println("Contacto agregado correctamente."); // Mostramos mensaje de éxito.
+        // Agregamos el contacto al HashMap.
+        // La clave será el nombre del contacto.
+        // El valor será el objeto Contacto completo.
+        contactos.put(contacto.getNombre(), contacto);
+
+        // Mostramos mensaje de éxito.
+        System.out.println("Contacto agregado correctamente.");
     }
 
-    public boolean existeContacto(Contacto contacto) { // Método que verifica si un contacto existe.
-        for (int i = 0; i < contadorContactos; i++) { // Recorremos solo las posiciones ocupadas.
-            if (contactos[i].equals(contacto)) { // Comparamos el contacto actual con el recibido.
-                return true; // Si existe, retornamos true.
-            }
+    public boolean existeContacto(Contacto contacto) {
+
+        // Obtenemos el nombre del contacto recibido.
+        String nombre = contacto.getNombre();
+
+        // Verificamos si existe una clave con ese nombre.
+        if (contactos.containsKey(nombre)) {
+
+            // El contacto existe.
+            return true;
         }
 
-        return false; // Si no se encontró, retornamos false.
+        // El contacto no existe.
+        return false;
     }
 
 
