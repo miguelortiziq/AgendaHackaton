@@ -124,6 +124,25 @@ public class Agenda {
         }
     }//modificarTelefono
 
+    //busca contacto
+
+    public void buscaContacto(String nombre, String apellido) {
+        if (nombre == null || apellido == null) {
+            System.out.println("El nombre y el apellido no pueden ser nulos.");
+            return;
+        }
+
+        String clave = generarClave(nombre, apellido);
+
+        if (contactos.containsKey(clave)) {
+            Contacto contactoEncontrado = contactos.get(clave);
+            System.out.println("Teléfono: " + contactoEncontrado.getTelefono());
+        } else {
+            System.out.println("No se ha encontrado el contacto.");
+        }
+    }
+
+}
 
 
 }//classAgenda
