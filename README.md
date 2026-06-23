@@ -2,7 +2,7 @@
 
 Integrantes del equipo:
 
-- Esmeralda
+- Rossana Esmeralda Cruz Mendoza
 - Luis
 - Mauro
 - Miguel Angel Ortiz Sánchez
