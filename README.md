@@ -5,6 +5,6 @@ Integrantes del equipo:
 - Esmeralda
 - Luis
 - Mauro
-- Miguel 
+- Miguel Angel Ortiz Sánchez
 - Uriel
 - Valeria
