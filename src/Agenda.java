@@ -61,17 +61,18 @@ public class Agenda {
     }
 
 
-    public void agendaLlena(Agenda miAgenda) {
+    public boolean agendaLlena() {
         int limiteMaximo = 10;
 
         if (contadorContactos>= limiteMaximo) {
 
-            System.out.println("No hay espacio disponible para nuevos contactos. La agenda está llena.");
+            return true;
         }
+        return false;
     }
 
     public int espacioLibres() { // Método para saber cuántos espacios libres quedan.
-        return contactos.length - contadorContactos; // Restamos el tamaño total menos los contactos ocupados.
+        return contactos.size() - contadorContactos; // Restamos el tamaño total menos los contactos ocupados.
     }
 
 
@@ -163,7 +164,6 @@ public class Agenda {
         }
     }
 
-}
 
 
 }//classAgenda

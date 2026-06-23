@@ -12,12 +12,10 @@ apellido (sin distinguir entre mayúsculas y minúsculas)
 
     public Contacto(String nombre, String apellido, String telefono) { // Constructor que recibe nombre y teléfono.
         this.nombre = nombre;
-        this.apellido=apellido;// Asignamos el nombre recibido al atributo nombre.
+        this.apellido = apellido;// Asignamos el nombre recibido al atributo nombre.
         this.telefono = telefono; // Asignamos el teléfono recibido al atributo telefono.
 
     }
-
-
 
 
     public String getNombre() {
@@ -61,7 +59,7 @@ apellido (sin distinguir entre mayúsculas y minúsculas)
 
     @java.lang.Override
     public java.lang.String toString() {
-      return "Contacto: " + nombre + " "  + apellido  +" || "+ telefono;
+        return "Contacto: " + nombre + " " + apellido + " || " + telefono;
     }//toString
 
 }
