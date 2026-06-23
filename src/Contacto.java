@@ -61,12 +61,8 @@ apellido (sin distinguir entre mayúsculas y minúsculas)
 
     @java.lang.Override
     public java.lang.String toString() {
-        return "Contacto{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", telefono='" + telefono + '\'' +
-                '}';
-    }
+      return "Contacto: " + nombre + " "  + apellido  +" || "+ telefono;
+    }//toString
 
 }
 
