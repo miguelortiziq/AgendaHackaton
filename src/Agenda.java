@@ -75,4 +75,50 @@ public class Agenda {
 
    }
 
+
+    //Genera una clave única en minúsculas para asegurar que no se distinga entre mayúsculas y minúsculas.
+
+    private String generarClave(String nombre, String apellido) {
+        return (nombre.trim() + "_" + apellido.trim()).toLowerCase();
+    }//generarClave
+
+
+
+    public void eliminarContacto(Contacto c) {
+        if (c == null) {
+            System.out.println("Seleccione un contacto");
+            return;
+        }
+
+        String clave = generarClave(c.getNombre(), c.getApellido());
+
+        if (contactos.containsKey(clave)) {
+            contactos.remove(clave);
+            contadorContactos--;
+            System.out.println("El contacto " + c.getNombre() + " " + c.getApellido() + " ha sido eliminado exitosamente.");
+        } else {
+            System.out.println("No se pudo eliminar; El contacto " + c.getNombre() + " " + c.getApellido() + " no existe en la agenda.");
+        }
+    }//eliminarContacto
+
+
+    public void modificarTelefono(String nombre, String apellido, String nuevoTelefono) {
+        if (nombre == null || apellido == null) {
+            System.out.println("Deben existir nombre y apellido");
+            return;
+        }
+
+        String clave = generarClave(nombre, apellido);
+
+        if (contactos.containsKey(clave)) {
+            Contacto contacto = contactos.get(clave);
+            contacto.setTelefono(nuevoTelefono);
+            System.out.println("El teléfono de " + nombre + " " + apellido + " ha sido modificado con éxito.");
+        } else {
+            System.out.println("No se pudo modificar: El contacto " + nombre + " " + apellido + " no existe.");
+        }
+    }//modificarTelefono
+
+
+
 }//classAgenda
