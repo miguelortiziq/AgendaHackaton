@@ -40,8 +40,13 @@ public class Agenda {
     }
 
 
-    public boolean agendaLlena() { // Método para saber si la agenda está llena.
-        return contadorContactos == contactos.length; // Retorna true si el contador es igual al tamaño del arreglo.
+    public void agendaLlena(Agenda miAgenda) {
+        int limiteMaximo = 10;
+
+        if (contadorContactos>= limiteMaximo) {
+
+            System.out.println("No hay espacio disponible para nuevos contactos. La agenda está llena.");
+        }
     }
 
     public int espacioLibres() { // Método para saber cuántos espacios libres quedan.
