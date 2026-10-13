@@ -5,7 +5,7 @@ Integrantes del equipo:
 
 - Rossana Esmeralda Cruz Mendoza
 - Luis
-- Mauro
+- Mauro Milán
 - Miguel Angel Ortiz Sánchez
-- Uriel
+- Uriel Díaz
 - Valeria Itzel Pérez Ponce
