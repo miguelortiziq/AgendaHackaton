@@ -4,7 +4,7 @@
 Integrantes del equipo:
 
 - Rossana Esmeralda Cruz Mendoza
-- Luis
+- Luis Soto
 - Mauro Milán
 - Miguel Angel Ortiz Sánchez
 - Uriel Díaz
